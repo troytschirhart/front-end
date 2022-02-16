@@ -1,0 +1,32 @@
+* {
+
+
+}
+
+#header-nav {
+	border-radius: 0;
+}
+
+
+.dropdown-menu {
+	background-color: cadetblue;
+	text-align: center;
+	border-radius: 0;
+	width: 100%;
+}
+
+.dropdown-item {
+	font-weight: bold;
+	color: white;
+}
+
+.tall-section {
+	background-color: lightgreen;
+}
+
+.menuItem {
+	background-color: lightgray;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
