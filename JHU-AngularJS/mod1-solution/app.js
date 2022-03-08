@@ -10,25 +10,22 @@ function LunchCheckController($scope) {
 	$scope.feedback = "";
 	$scope.fontColor = "black";
 	$scope.borderColor = "black";
-	var totalCount = 0;
 
 	$scope.checkList = function () {
-		// get the count of total actual items in the list
-		totalCount = parseList($scope.lunchList);
+		// parse the list based on commas
+		var parsedItems = parseList($scope.lunchList);
 
-		// set the feedback message based on the total count
-		$scope.feedback = setFeedback(totalCount);
+		// get the count for actual (non-empty) items
+		var itemCount = countRealItems(parsedItems);
+
+		// set the feedback message based on the count of real items 
+		$scope.feedback = setFeedback(itemCount);
 	}
 
 	function parseList (string) {
 		// split the list based on commas
 		const items = string.split(",");
-
-		// get the count for actual (non-empty) items
-		var itemCount = countRealItems(items);
-
-		// return the count of actual items
-		return itemCount;
+		return items;
 	}
 
 	function countRealItems (arrayOfItems) {
@@ -60,7 +57,5 @@ function LunchCheckController($scope) {
 		}
 		return feedbackMessage;
 	};
-
 };
-
 })();
