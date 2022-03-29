@@ -7,8 +7,8 @@ angular.module('ShoppingListCheckOff',[])
 .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
 .filter('angularBucks', AngularBucksFilter);
 
-ToBuyController.$inject = ['ShoppingListCheckOffService','angularBucksFilter'];
-function ToBuyController(ShoppingListCheckOffService, angularBucksFilter) {
+ToBuyController.$inject = ['ShoppingListCheckOffService'];
+function ToBuyController(ShoppingListCheckOffService) {
   var toBuy = this;
 
   toBuy.toBuyList = ShoppingListCheckOffService.getToBuyList();
