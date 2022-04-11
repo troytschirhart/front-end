@@ -31,6 +31,7 @@ function NarrowItDownController(MenuSearchService) {
 	narrow.getMatchedMenuItems = function () {
 		if (narrow.searchTerm == null || narrow.searchTerm == "") {
 			narrow.message = "Nothing found";
+			narrow.found = [];
 		} else {
 			// getMatchedMenuItems returns a promise containing the search results
 			MenuSearchService.getMatchedMenuItems(narrow.searchTerm)
@@ -62,7 +63,7 @@ MenuSearchService.$inject = ['$http']
 function MenuSearchService($http) {
   var service = this;
   var found = [];
-  var foundItems = [];
+  // var foundItems = [];
 
   service.getMatchedMenuItems = function (searchTerm) {
   	found = [];
@@ -72,7 +73,7 @@ function MenuSearchService($http) {
   		url: ("http://davids-restaurant.herokuapp.com/menu_items.json")
   	}).then(function (result) {
   		// var foundItems = [];
-  		searchTerm = searchTerm.toLowerCase();
+  		searchTerm = searchTerm.toLowerCase().trim();
   		for (var counter = 0; counter < result.data.menu_items.length; counter++) {
   			if (result.data.menu_items[counter].description.toLowerCase().indexOf(searchTerm) != -1) {
   				found.push(result.data.menu_items[counter]);
