@@ -69,7 +69,7 @@ function MenuSearchService($http) {
 
   	return $http({
   		method: "GET",
-  		url: ("http://davids-restaurant.herokuapp.com/menu_items.json")
+  		url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
   	}).then(function (result) {
   		searchTerm = searchTerm.toLowerCase().trim();
   		for (var counter = 0; counter < result.data.menu_items.length; counter++) {
