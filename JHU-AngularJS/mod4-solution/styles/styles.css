@@ -1,0 +1,24 @@
+.cellBorder {
+  border: 1px solid black;
+  padding: 5px;
+}
+.centerHeading {
+  text-align: center;
+}
+.centerMessage {
+  display: block;
+  clear: both;
+  margin: auto;
+  text-align: center;
+}
+.bodyPadding {
+	padding: 20px;
+}
+ul > li {
+	color: blue;
+
+}
+ul > li:hover {
+	font-weight: bold;
+	cursor: pointer;
+}

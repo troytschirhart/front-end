@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th class="cellBorder centerHeading">Short Name</th>
+    <th class="cellBorder centerHeading">Name</th>            
+    <th class="cellBorder centerHeading">Description</th>
+  </tr>
+
+  <tr ng-repeat="item in $ctrl.items" class="cellBorder">
+	  <td class="cellBorder centerHeading">{{ item.short_name }}</td>
+	  <td class="cellBorder">{{ item.name}}</td>
+	  <td class="cellBorder">{{ item.description }}</td>
+  </tr>
+
+</table>
