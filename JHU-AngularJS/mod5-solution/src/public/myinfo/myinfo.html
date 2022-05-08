@@ -1,0 +1,78 @@
+
+
+<h1 class="regCenterText" style="text-align: center;">Registered Information</h1>
+
+<fieldset>
+	<hr />
+
+  	<table class="regCenter" ng-if="myinfoCtrl.user.signedup">
+  		<tr>
+  			<td>
+	      	<label class="regWhite">First Name:</label>
+	      </td>
+	      <td>
+	      	{{ myinfoCtrl.user.firstname }}
+        </td>
+      </tr>
+      
+      <tr>
+      	<td>
+					<label class="regWhite">Last Name:</label>
+        </td>
+        <td>
+        	{{ myinfoCtrl.user.lastname }}
+        </td>
+      </tr>
+      
+      <tr>
+      	<td>
+					<label class="regWhite">Email Address:</label>
+      	</td>
+      	<td>
+      		{{ myinfoCtrl.user.email }}
+      	</td>
+      </tr>
+
+      <tr>
+      	<td>
+					<label class="regWhite">Phone Number:&nbsp;</label>
+      	</td>
+      	<td>
+      		{{ myinfoCtrl.user.phone }}
+      	</td>
+      </tr>
+
+      <tr>
+      	<td>
+					<label class="regWhite">Favorite Dish:</label>
+      	</td>
+      	<td>
+      		{{ myinfoCtrl.user.favitem }}
+      	</td>
+      </tr>
+		</table>      
+
+  </form>
+</fieldset>
+<br/>
+<div id="info" ng-if="myinfoCtrl.user.signedup=='null' || !myinfoCtrl.user.signedup" class="regCenterBold">
+	Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+</div>
+
+
+<div class="menu-item-tile col-md-6" ng-if="myinfoCtrl.user.signedup">
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="menu-item-photo">
+        <div>{{myinfoCtrl.user.favitem}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}images/{{myinfoCtrl.user.favitem}}.jpg" alt="{{myinfoCtrl.user.favname}}">
+      </div>
+    </div>
+    <div class="menu-item-description col-sm-7">
+      <h3 class="menu-item-title">{{myinfoCtrl.user.favname}}</h3>
+      <p class="menu-item-details">{{myinfoCtrl.user.favdescription}}</p>
+    </div>
+  </div>
+  <hr class="visible-xs">
+</div>
+

@@ -1,0 +1,117 @@
+
+
+
+<h1 class="regCenterText">Sign Up For Our Newsletter</h1>
+
+<fieldset>
+	<hr />
+  <form name='signupForm' novalidate class="regBlack">
+
+  	<table class="regCenter">
+  		<tr>
+  			<td>
+	      	<label class="regWhite">First Name:</label>
+	      </td>
+	      <td>
+	        <input type="text" name="firstname" placeholder="Enter your first name"
+	          ng-model="signupCtrl.user.firstname"
+	          required
+	          minlength="4"
+	          ng-maxlength="10">
+        </td>
+        <td>
+          <span class="regGold"
+            ng-if="(signupForm.firstname.$error.minlength || signupForm.firstname.$error.required) && signupForm.firstname.$touched">
+            &nbsp;Firstname must be at least 4 characters long
+          </span>
+          <span class="regGold" ng-if="signupForm.firstname.$error.maxlength && signupForm.firstname.$touched">
+            Firstname must not be longer than 10 characters
+          </span>
+        </td>
+      </tr>
+      
+      <tr>
+      	<td>
+					<label class="regWhite">Last Name:</label>
+        </td>
+        <td>
+        	<input type="text" name="lastname" placeholder="Enter your last name"
+	          ng-model="signupCtrl.user.lastname"
+	          required
+	          minlength="4"
+	          ng-maxlength="10">
+        </td>
+        <td>
+          <span 
+           	class="regGold"
+            ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required) && signupForm.lastname.$touched">
+            &nbsp;Lastname must be at least 4 characters long
+          </span>
+          <span class="regGold" ng-if="signupForm.lastname.$error.maxlength && signupForm.lastname.$touched">
+            &nbsp;Lastname must not be longer than 10 characters
+          </span>
+        </td>
+      </tr>
+      
+      <tr>
+      	<td>
+					<label class="regWhite">Email Address:</label>
+      	</td>
+      	<td>
+    			<input type="email" name="email" placeholder="Enter your Email"
+	          ng-model="signupCtrl.user.email"
+	          required>
+      	</td>
+      	<td>
+          <span class="regGold" ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+            &nbsp;Must be a valid email address: handle@domain format
+          </span>
+      	</td>
+      </tr>
+
+      <tr>
+      	<td>
+					<label class="regWhite">Phone Number:&nbsp;</label>
+      	</td>
+      	<td>
+					<input type="text" name="phone" placeholder="Phone ###-###-####"
+	          ng-model="signupCtrl.user.phone"
+	          pattern="(\d{3})-(\d{3})-(\d{4})"
+	          required>
+      	</td>
+      	<td>
+          <span class="regGold" ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+            &nbsp;Phone must be in the format ###-###-####
+          </span>
+      	</td>
+      </tr>
+
+      <tr>
+      	<td>
+					<label class="regWhite">Favorite Dish:</label>
+      	</td>
+      	<td>
+	        <input type="text" name="favitem" placeholder="Favorite dish"
+	          ng-model="signupCtrl.user.favitem" required  fav-exists >
+      	</td>
+      	<td>
+      		<span class="regGold" ng-if="!signupCtrl.user.validItem && signupForm.favitem.$touched">
+            &nbsp;No such menu number exists
+          </span>
+      	</td>
+      </tr>
+      <tr></tr>
+      <tr>
+      	<td></td><td>
+	        <button class="regButton" 
+	          ng-disabled="signupForm.$invalid || signupForm.$pending"
+	          ng-click="signupCtrl.submit()">Submit</button>
+	      </td><td></td>
+		</table>      
+
+  </form>
+</fieldset>
+<br/>
+<div id="info" ng-if="signupCtrl.completed" class="regCenterBold">
+	Your information has been saved
+</div>

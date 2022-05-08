@@ -1,0 +1,30 @@
+.regBlack {
+	color:black;
+}
+
+.regCenter {
+	margin: 0 auto;
+}
+
+.regWhite {
+	color:white;
+}
+
+.regGold {
+	color:gold;
+}
+
+.regButton {
+	margin: 10px 0 0 50px; 
+	background-color: white; 
+	border-radius: 5px;
+}
+
+.regCenterBold {
+	text-align: center; 
+	font-weight: bold
+}
+
+.regCenterText {
+	text-align: center;
+}
