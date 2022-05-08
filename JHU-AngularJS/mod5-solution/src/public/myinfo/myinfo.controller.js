@@ -1,7 +1,7 @@
 (function () {
 "use strict";
 
-angular.module('common')
+angular.module('public')
 .controller('MyInfoController', MyInfoController);
 
 MyInfoController.$inject = ['SignupService', 'ApiPath'];

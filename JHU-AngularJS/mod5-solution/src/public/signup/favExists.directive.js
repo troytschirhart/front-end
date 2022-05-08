@@ -1,7 +1,7 @@
 (function () {
 "use strict";
 
-angular.module('common')
+angular.module('public')
 .directive('favExists', FavExists);
 
 FavExists.$inject = ['SignupService','$http', '$q' ];
