@@ -8,7 +8,7 @@ describe('signup', function () {
   var noSuchNumber;
 
   beforeEach(function () {
-    module('common');
+    module('public');
 
     shortName = "L1";    
 
