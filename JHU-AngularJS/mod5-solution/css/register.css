@@ -28,3 +28,11 @@
 .regCenterText {
 	text-align: center;
 }
+
+.regWhiteBox {
+	border: 1px solid white;
+}
+
+.regGoldBox {
+	border: 1px solid gold;	
+}
